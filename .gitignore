@@ -1,0 +1,4 @@
+approach/*.json
+*.pyc
+webtriage/webtriage/config.json
+approach/src/train/tossing/WedlerTossing.py

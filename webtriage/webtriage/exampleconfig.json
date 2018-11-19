@@ -1,0 +1,77 @@
+{
+    "projects": [
+        {
+            "its": {
+                "type": "bugzilla",
+                "key": "KEY",
+                "projects": [
+                    "Core"
+                ],
+                "url": "https://bugzilla.mozilla.org",
+                "ignore": ["nobody@mozilla.org"]
+            },
+            "vcs": {
+                "type": "mercurial",
+                "url": "https://hg.mozilla.org/mozilla-unified/"
+            },
+            "pipeline": [
+                "SimpleLoader",
+                "SimpleNB",
+                "SimpleSVM",
+                "VDCNN",
+                "CNN",
+                "DeepTriageCP"
+            ]
+        },
+        {
+            "its": {
+                "type": "bugzilla",
+                "key": "KEY",
+                "projects": [
+                    "JDT"
+                ],
+                "url": "https://bugs.eclipse.org/bugs/xmlrpc.cgi"
+            },
+            "vcs": {
+                "type": "git",
+                "url": "git://git.eclipse.org/gitroot/jdt/eclipse.jdt.core.git"
+            },
+            "pipeline": [
+                "DeepTriage"
+            ]
+        },
+        {
+            "its": {
+                "type": "bugzilla",
+                "key": "KEY",
+                "projects": [
+                    "Core"
+                ],
+                "url": "https://bugzilla.mozilla.org"
+            },
+            "vcs": {
+                "type": "mercurial",
+                "url": "https://hg.mozilla.org/mozilla-unified/"
+            },
+            "pipeline": [
+                "CNN",
+                "DeepTriageCP",
+                "MultiFeatureTossing"
+            ]
+        }
+    ],
+    "cache": "../approach/cache/",
+    "db": {
+        "user": "cp",
+        "pwd": "pwd",
+        "name": "pbtr",
+        "host": "host"
+    },
+    "s3": {
+        "bucket": "",
+        "keyId": "",
+        "keySecret": "",
+        "region": "eu-central-1"
+    },
+    "maxThreads": 5
+}
